@@ -1,12 +1,11 @@
 from lib2to3.pgen2.token import OP
-from typing import List, Tuple, Optional
-
-from sqlalchemy import select
-from sqlalchemy.engine import Result
-from sqlalchemy.ext.asyncio import AsyncSession
+from typing import List, Optional, Tuple
 
 import models.task as task_model
 import schemas.task as task_schema
+from sqlalchemy import select
+from sqlalchemy.engine import Result
+from sqlalchemy.ext.asyncio import AsyncSession
 
 
 async def get_tasks_with_done(db: AsyncSession) -> List[Tuple[int, str, bool]]:
